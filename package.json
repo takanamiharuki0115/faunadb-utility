@@ -3,8 +3,31 @@
   "version": "0.0.1",
   "description": "Set of useful helper functions to use with FaunaDB",
   "main": "index.js",
-  "repository": "https://github.com/marc-aurele-besner/faunadb-utility.git",
+  "scripts": {
+    "build": "npx awesome-readme && npm run lint:fix && tsc --project tsconfig.json",
+    "lint:fix": "prettier --write src/**/*.{js,ts} && tslint --fix --config tslint.json --project tsconfig.json",
+    "lint": "tslint --config tslint.json --project tsconfig.json",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marc-aurele-besner/faunadb-utility.git"
+  },
+  "keywords": [
+    "faunaDB",
+    "helper",
+    "utility"
+  ],
   "author": "Marc-Aurele Besner <82244926+marc-aurele-besner@users.noreply.github.com>",
   "license": "MIT",
-  "private": true
+  "bugs": {
+    "url": "https://github.com/marc-aurele-besner/faunadb-utility/issues"
+  },
+  "homepage": "https://github.com/marc-aurele-besner/faunadb-utility#readme",
+  "dependencies": {
+    "faunadb": "^4.7.1"
+  },
+  "devDependencies": {
+    "awesome-readme": "^0.0.8"
+  }
 }
