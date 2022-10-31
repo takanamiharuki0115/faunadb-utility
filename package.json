@@ -1,0 +1,10 @@
+{
+  "name": "faunadb-utility",
+  "version": "0.0.1",
+  "description": "Set of useful helper functions to use with FaunaDB",
+  "main": "index.js",
+  "repository": "https://github.com/marc-aurele-besner/faunadb-utility.git",
+  "author": "Marc-Aurele Besner <82244926+marc-aurele-besner@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true
+}
