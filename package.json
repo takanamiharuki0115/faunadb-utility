@@ -9,6 +9,10 @@
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "watch": "tsc -w"
   },
+  "files": [
+      "/dist/**/*.{js,ts,map}",
+      "/src/**/*.{js,ts}"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marc-aurele-besner/faunadb-utility.git"
