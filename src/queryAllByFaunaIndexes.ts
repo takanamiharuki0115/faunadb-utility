@@ -6,6 +6,7 @@ const queryAllByFaunaIndexes = async (clientOrToken: Client | string, indexes: s
   let client: Client
   if (typeof clientOrToken === 'string') client = faunaClient(clientOrToken)
   else client = clientOrToken
+  if (client === undefined) throw new Error('Fauna client is undefined')
   return client
     .query(faunaQuery.Paginate(faunaQuery.Match(faunaQuery.Ref('indexes/' + indexes))))
     .then((response: any) => {
