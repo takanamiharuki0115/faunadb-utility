@@ -6,6 +6,7 @@ const createFaunaDocument = async (clientOrToken: Client | string, classes: stri
   let client: Client
   if (typeof clientOrToken === 'string') client = faunaClient(clientOrToken)
   else client = clientOrToken
+  if (client === undefined) throw new Error('Fauna client is undefined')
   return client
     .query(
       faunaQuery.Create(faunaQuery.Ref('classes/' + classes), {
