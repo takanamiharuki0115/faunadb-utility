@@ -2,7 +2,7 @@ import { Client, query as faunaQuery } from 'faunadb'
 
 import faunaClient from './faunaClient'
 
-const updateFaunaDocument = async (clientOrToken: Client | string, classes: string, id: string, data = {} as any) => {
+const updateFaunaDocument = async (clientOrToken: Client | string, classes: string, id: string, data = {} as any, consoleLog = false as boolean) => {
   let client: Client
   if (typeof clientOrToken === 'string') client = faunaClient(clientOrToken)
   else client = clientOrToken
@@ -10,14 +10,14 @@ const updateFaunaDocument = async (clientOrToken: Client | string, classes: stri
   return client
     .query(faunaQuery.Update(faunaQuery.Ref(`classes/${classes}/${id}`), { data }))
     .then((response: any) => {
-      console.log('success', response)
+      if (consoleLog) console.log('success', response)
       return {
         statusCode: 200,
         body: JSON.stringify(response)
       }
     })
     .catch((error: any) => {
-      console.log('error', error)
+      if (consoleLog) console.log('error', error)
       return {
         statusCode: 400,
         body: JSON.stringify(error)

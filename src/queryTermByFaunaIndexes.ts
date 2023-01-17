@@ -2,7 +2,7 @@ import { Client, query as faunaQuery } from 'faunadb'
 
 import faunaClient from './faunaClient'
 
-const queryTermByFaunaIndexes = async (clientOrToken: Client | string, indexes: string, term: string) => {
+const queryTermByFaunaIndexes = async (clientOrToken: Client | string, indexes: string, term: string, consoleLog = false as boolean) => {
   let client: Client
   if (typeof clientOrToken === 'string') client = faunaClient(clientOrToken)
   else client = clientOrToken
@@ -11,8 +11,7 @@ const queryTermByFaunaIndexes = async (clientOrToken: Client | string, indexes: 
     .query(faunaQuery.Paginate(faunaQuery.Match(faunaQuery.Index(indexes), term)))
     .then((response: any) => {
       const resultsRefs = response.data
-      console.log('activityLogs refs', resultsRefs)
-      console.log(`${resultsRefs.length} activityLogs found`)
+      if (consoleLog) console.log('refs', resultsRefs, `${resultsRefs.length} refs found`)
 
       const results = resultsRefs.map((ref: any) => {
         return faunaQuery.Get(ref)
@@ -26,7 +25,7 @@ const queryTermByFaunaIndexes = async (clientOrToken: Client | string, indexes: 
       })
     })
     .catch((error: any) => {
-      console.log('error', error)
+      if (consoleLog) console.log('error', error)
       return {
         statusCode: 400,
         body: JSON.stringify(error)
