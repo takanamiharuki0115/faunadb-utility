@@ -33,7 +33,9 @@ const fauna = require('faunadb-utility');
 
 ### Functions
 
+- \`createClasses\` : Create a class in fauna. (Collection)
 - \`createFaunaDocument\` : Create a fauna document.
+- \`createIndexes\` : Create a index in fauna.
 - \`deleteFaunaDocument\` : Delete a fauna document.
 - \`faunaClient\` : Create a fauna client.
 - \`queryAllByFaunaIndexes\` : Query all documents by fauna indexes.
