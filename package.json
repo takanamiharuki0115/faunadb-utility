@@ -1,6 +1,6 @@
 {
   "name": "faunadb-utility",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Set of useful helper functions to use with FaunaDB",
   "main": "dist/index",
   "typings": "dist/index",
