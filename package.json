@@ -1,6 +1,6 @@
 {
   "name": "faunadb-utility",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Set of useful helper functions to use with FaunaDB",
   "main": "dist/index",
   "typings": "dist/index",
@@ -30,17 +30,17 @@
     "url": "https://github.com/marc-aurele-besner/faunadb-utility/issues"
   },
   "homepage": "https://github.com/marc-aurele-besner/faunadb-utility#readme",
-  "dependencies": {
-    "faunadb": "^4.7.1"
-  },
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.13.0",
     "awesome-readme": "^0.0.8",
-    "prettier": "^2.8.3",
+    "prettier": "^2.8.4",
     "ts-node": "^10.9.1",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.3.0",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "faunadb": "^4.8.0"
   }
 }

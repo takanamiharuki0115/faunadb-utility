@@ -1,4 +1,4 @@
-import { Client, query as faunaQuery } from 'faunadb'
+import { Client, FaunaHttpErrorResponseContent, query as faunaQuery } from 'faunadb'
 
 import faunaClient from './faunaClient'
 
@@ -9,11 +9,19 @@ const createClasses = async (clientOrToken: Client | string, classes: string, co
   if (client === undefined) throw new Error('Fauna client is undefined')
   return client
     .query(faunaQuery.Create(faunaQuery.Ref('classes'), { classes }))
-    .then(() => {
-      if (consoleLog) console.log('\x1b[34m%s\x1b[0m', 'Created class: ', classes)
+    .then((response: object) => {
+      if (consoleLog) console.log('\x1b[34m%s\x1b[0m', 'Created class: ', classes, response)
+      return {
+        statusCode: 200,
+        body: JSON.stringify(response)
+      }
     })
-    .catch((e) => {
-      if (consoleLog) console.log('\x1b[33m%s\x1b[0m', 'Error creating class: ', classes)
+    .catch((error: FaunaHttpErrorResponseContent) => {
+      if (consoleLog) console.log('\x1b[33m%s\x1b[0m', 'Error creating class: ', classes, error)
+      return {
+        statusCode: 400,
+        body: JSON.stringify(error)
+      }
     })
 }
 

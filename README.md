@@ -31,12 +31,12 @@ yarn add faunadb-utility
 
  - [.eslintrc.js](./.eslintrc.js)
  - [.prettierrc](./.prettierrc)
- - [awesome-readme.config.js](./awesome-readme.config.js)
  - [CONTRIBUTING.md](./CONTRIBUTING.md)
  - [LICENSE](./LICENSE)
+ - [README.md](./README.md)
+ - [awesome-readme.config.js](./awesome-readme.config.js)
  - [package-lock.json](./package-lock.json)
  - [package.json](./package.json)
- - [README.md](./README.md)
  - [tsconfig.json](./tsconfig.json)
  - [tslint.json](./tslint.json)
 
@@ -68,15 +68,16 @@ const fauna = require('faunadb-utility');
 faunadb-utility/
 │   .eslintrc.js
 │   .prettierrc
-│   awesome-readme.config.js
 │   CONTRIBUTING.md
 │   LICENSE
+│   README.md
+│   awesome-readme.config.js
 │   package-lock.json
 │   package.json
-│   README.md
 │   tsconfig.json
 │   tslint.json
 └─── src/
+   │   README.md
    │   createClasses.ts
    │   createFaunaDocument.ts
    │   createIndexes.ts
@@ -85,7 +86,6 @@ faunadb-utility/
    │   index.ts
    │   queryAllByFaunaIndexes.ts
    │   queryTermByFaunaIndexes.ts
-   │   README.md
    │   updateFaunaDocument.ts
 ```
 ## Don't hesitate to contribute to this project.

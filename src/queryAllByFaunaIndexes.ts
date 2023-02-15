@@ -1,4 +1,4 @@
-import { Client, query as faunaQuery } from 'faunadb'
+import { Client, ExprArg, FaunaHttpErrorResponseContent, query as faunaQuery } from 'faunadb'
 
 import faunaClient from './faunaClient'
 
@@ -13,18 +13,18 @@ const queryAllByFaunaIndexes = async (clientOrToken: Client | string, indexes: s
       const resultsRefs = response.data
       if (consoleLog) console.log('refs', resultsRefs, `${resultsRefs.length} refs found`)
 
-      const results = resultsRefs.map((ref: any) => {
+      const results = resultsRefs.map((ref: ExprArg) => {
         return faunaQuery.Get(ref)
       })
 
-      return client.query(results).then((ret: any) => {
+      return client.query(results).then((ret: object) => {
         return {
           statusCode: 200,
           body: JSON.stringify(ret)
         }
       })
     })
-    .catch((error: any) => {
+    .catch((error: FaunaHttpErrorResponseContent) => {
       if (consoleLog) console.log('error', error)
       return {
         statusCode: 400,
