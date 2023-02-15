@@ -1,8 +1,8 @@
-import { Client, query as faunaQuery } from 'faunadb'
+import { Client, FaunaHttpErrorResponseContent, query as faunaQuery } from 'faunadb'
 
 import faunaClient from './faunaClient'
 
-const createFaunaDocument = async (clientOrToken: Client | string, classes: string, data = {} as any, consoleLog = false as boolean) => {
+const createFaunaDocument = async (clientOrToken: Client | string, classes: string, data: object, consoleLog = false as boolean) => {
   let client: Client
   if (typeof clientOrToken === 'string') client = faunaClient(clientOrToken)
   else client = clientOrToken
@@ -13,14 +13,14 @@ const createFaunaDocument = async (clientOrToken: Client | string, classes: stri
         data
       })
     )
-    .then(async (response: any) => {
+    .then(async (response: object) => {
       if (consoleLog) console.log('success', response)
       return {
         statusCode: 200,
         body: JSON.stringify(response)
       }
     })
-    .catch((error: any) => {
+    .catch((error: FaunaHttpErrorResponseContent) => {
       if (consoleLog) console.log('error', error)
       return {
         statusCode: 400,
