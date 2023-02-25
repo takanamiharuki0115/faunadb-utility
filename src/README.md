@@ -18,7 +18,7 @@ __                            _ _                 _   _ _ _ _
 ```
 
 
- - [README.md](./README.md) - [createClasses.ts](./createClasses.ts) - [createFaunaDocument.ts](./createFaunaDocument.ts) - [createIndexes.ts](./createIndexes.ts) - [deleteFaunaDocument.ts](./deleteFaunaDocument.ts) - [faunaClient.ts](./faunaClient.ts) - [index.ts](./index.ts) - [queryAllByFaunaIndexes.ts](./queryAllByFaunaIndexes.ts) - [queryTermByFaunaIndexes.ts](./queryTermByFaunaIndexes.ts) - [updateFaunaDocument.ts](./updateFaunaDocument.ts)
+ - [README.md](./README.md) - [createClasses.ts](./createClasses.ts) - [createFaunaDocument.ts](./createFaunaDocument.ts) - [createIndexes.ts](./createIndexes.ts) - [deleteFaunaDocument.ts](./deleteFaunaDocument.ts) - [faunaClient.ts](./faunaClient.ts) - [index.ts](./index.ts) - [queryAllByFaunaIndexes.ts](./queryAllByFaunaIndexes.ts) - [queryTermByFaunaIndexes.ts](./queryTermByFaunaIndexes.ts) - [queryTermsByFaunaIndexes.ts](./queryTermsByFaunaIndexes.ts) - [updateFaunaDocument.ts](./updateFaunaDocument.ts)
 ## Directory Tree
 [<- Previous](https://github.com/marc-aurele-besner/faunadb-utility)
 ```
@@ -32,5 +32,6 @@ src/
    │   index.ts
    │   queryAllByFaunaIndexes.ts
    │   queryTermByFaunaIndexes.ts
+   │   queryTermsByFaunaIndexes.ts
    │   updateFaunaDocument.ts
 ```
