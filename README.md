@@ -60,6 +60,7 @@ const fauna = require('faunadb-utility');
 - `faunaClient` : Create a fauna client.
 - `queryAllByFaunaIndexes` : Query all documents by fauna indexes.
 - `queryTermByFaunaIndexes` : Query documents by fauna indexes and term.
+- `queryTermsByFaunaIndexes` : Query documents by fauna indexes and terms.
 - `updateFaunaDocument` : Update a fauna document.
 
 
@@ -86,6 +87,7 @@ faunadb-utility/
    │   index.ts
    │   queryAllByFaunaIndexes.ts
    │   queryTermByFaunaIndexes.ts
+   │   queryTermsByFaunaIndexes.ts
    │   updateFaunaDocument.ts
 ```
 ## Don't hesitate to contribute to this project.

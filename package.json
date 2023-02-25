@@ -1,6 +1,6 @@
 {
   "name": "faunadb-utility",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Set of useful helper functions to use with FaunaDB",
   "main": "dist/index",
   "typings": "dist/index",
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/marc-aurele-besner/faunadb-utility#readme",
   "devDependencies": {
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.1",
     "awesome-readme": "^0.0.8",
     "prettier": "^2.8.4",
     "ts-node": "^10.9.1",

@@ -5,6 +5,7 @@ import deleteFaunaDocument from './deleteFaunaDocument'
 import faunaClient from './faunaClient'
 import queryAllByFaunaIndexes from './queryAllByFaunaIndexes'
 import queryTermByFaunaIndexes from './queryTermByFaunaIndexes'
+import queryTermsByFaunaIndexes from './queryTermsByFaunaIndexes'
 import updateFaunaDocument from './updateFaunaDocument'
 
 export default {
@@ -13,8 +14,9 @@ export default {
   createClasses,
   createFaunaDocument,
   createIndexes,
-  updateFaunaDocument,
   deleteFaunaDocument,
   queryAllByFaunaIndexes,
-  queryTermByFaunaIndexes
+  queryTermByFaunaIndexes,
+  queryTermsByFaunaIndexes,
+  updateFaunaDocument
 }

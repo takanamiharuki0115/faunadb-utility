@@ -40,6 +40,7 @@ const fauna = require('faunadb-utility');
 - \`faunaClient\` : Create a fauna client.
 - \`queryAllByFaunaIndexes\` : Query all documents by fauna indexes.
 - \`queryTermByFaunaIndexes\` : Query documents by fauna indexes and term.
+- \`queryTermsByFaunaIndexes\` : Query documents by fauna indexes and terms.
 - \`updateFaunaDocument\` : Update a fauna document.
 
 `,
